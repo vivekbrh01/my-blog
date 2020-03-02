@@ -8,7 +8,7 @@ published: false
 
   
 
-![](./asset-1.gif)![](./asset-2)![](./asset-3.gif)
+![](./asset-1.gif)![](./asset-3.gif)
 
 February 2020
 
