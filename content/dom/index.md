@@ -3,7 +3,7 @@ title: "Baics of DOM"
 description: "Learn about dom"
 date: "2020-03-2"
 categories: ['js', 'dom']
-published: true
+published: false
 ---
 
 Well, I write this article because lately I was dealing with source code in js that had an excessive amount of if statement,
