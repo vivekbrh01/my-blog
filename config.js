@@ -7,7 +7,7 @@ module.exports = {
   // It should complete the sentence: Written by Vivek Baruah ...
   shortBio: '',
   // a longer bio showing on the landing page of the blog
-  bio: `Engineer, Programmer, Educationist, Aspirant.`,
+  bio: `Engineer, Programmer, Educationist, Aspirant. 🦊`,
   author: 'Vivek Baruah',
   githubUrl: 'https://github.com/',
   // replace this by the url where your website will be published
