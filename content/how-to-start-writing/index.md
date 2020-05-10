@@ -6,9 +6,6 @@ categories: []
 published: false
 ---
 
-  
-
-![](./asset-1.gif)![](./asset-3.gif)
 
 February 2020
 

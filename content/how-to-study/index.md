@@ -1,9 +1,9 @@
 ---
-title: "How to study"
-description: "// How to study?"
-date: "2020-03-02T07:35:05.281Z"
-categories: []
-published: false
+title: 'How to study'
+description: '// How to study?'
+date: '2020-03-02T07:35:05.281Z'
+categories: [studies, preparation]
+published: true
 ---
 
 // How to study?
@@ -14,7 +14,7 @@ Photo reading speed reading
 
 Figures and diagrams helps
 
-Techniques for revision 
+Techniques for revision
 
 The tick mark technique
 
