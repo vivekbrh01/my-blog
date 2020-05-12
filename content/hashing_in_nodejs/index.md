@@ -1,33 +1,38 @@
 ---
-title: 'Hashing Passwords In NodeJS'
-description: 'nsfmmsnvmznx,…'
-date: '2020-05-10T12:52:39.588Z'
-categories: [NodeJS, JavaScript, BackEnd]
-published: false
 
---- In JavaScript values are converted from one type to another. Many a times it is done by the language itself and is called implicit type conversion. However, sometimes we need to specifically tell the language to do it; it is known as explicit type conversion.
+title: 'Hashing Passwords In NodeJS' description: 'Hashes and salts mostly used before saving passwords in the database. This converts the plain text password into…' date: '2020-05-11T12:52:39.588Z' categories: [NodeJS, JavaScript, BackEnd] published: false
 
-**String conversion**
+--- Hashes and salts mostly used before saving passwords in the database. This converts the plain text password into a random string. It is an irreversible conversion of strings of arbitrary length to hashed strings of fixed length.
 
-![Figure 1: **Conversion from Boolean to String**](./asset-1.png)
+Another important thing in this process is Salt which are added to strings before hashing. It makes the hashed strings more secure by adding to the complexities.
 
-In the Figure 1 shows conversion of boolean type data to a string.
+**Using Bcrypt In NodeJS**
 
-**Numeric conversion**
+In this article we are going to discuss about Bcrypt which is available as an NPM Package. It can be installed locally by running the following command in the terminal.
 
-In mathematical expressions numeric conversion is done by the language itself. For example:
+`**npm install bcrypt**`
 
-![Figure 2: **Conversion from String to Number**](./asset-2.png)
+This will automatically add `**bcrypt**` to `**package.json**` file. The next step is to include it in the project.
 
-Sometimes when we need to explicitly convert a value to a number we use `**Number(value)**` or `**+(value)**`**.** It is needed when we are reading from a string but the expected output is a number. However, when the string is not a valid number the result of conversion is `**NaN**`.
+```js
+const bcrypt = require('bcrypt')
+const saltRounds = 10
+```
 
-**Boolean conversion**
+Bcrypt has both synchronous and asynchronous modes of operation. However the recommended approach is asynchronous. It is because hashing is a memory intensive process and the synchronous version blocks the event loop until the process is completed.
 
-The simplest of the conversions is Boolean conversion. It returns only two values either `“**true**”` or `“**false**”`.
+We are going to use pre-save hooks for hashing the password in the userSchema. The following code is valid if we are registering for the first time or modifying a password. In both the cases the password will be hashed before being stored in the database.
 
-Rules:
+![Figure 1: **Hashed password**](./asset-1.png)
 
-- Values like 0, empty string, null, undefined and NaN become “false”.
-- Other values become “true”.
+To validate the password we can define methods on the Schema and use the following code.
+
+![Figure 2: **Verifying password**](./asset-2.png)
+
+In the login routes, now we can verify a user credentials (email and password) to log a user in, if credentials match the one saved with database.
+
+![Figure 2: **Logging in a user and handling error conditions**](./asset-3.png)
+
+Thus we can safely store the passwords in our database. Here the database admin also has no access to the passwords of the users as it is stored in hashed format instead of plain-text.
 
 **Thank You!**
